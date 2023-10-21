@@ -1,0 +1,62 @@
+%btn,
+.btn{
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    padding: space() space(2);
+    border: 1px solid;
+    border-radius: 4px;
+    transition:.3s;
+
+    &:hover{
+        filter: brightness(1.4);
+    }
+}
+
+
+.btn-primary{
+    @extend %btn;
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+    color: white;
+}
+
+.btn-secondary{
+    @extend %btn;
+    border-color: rgb(15, 95, 161);
+    background-color: rgb(15, 95, 161);
+    color: #fff; 
+}
+
+.btn-tertiary{
+    @extend %btn;
+    background-color: rgb(102, 99, 99);
+    border-color: rgb(102, 99, 99);
+    color: #fff;
+}
+.btn-danger{
+    @extend %btn;
+    border-color: rgb(230, 67, 67);
+    background-color: rgb(230, 67, 67);
+    color: #fff;
+}
+
+.btn-outlined-primary{
+    @extend %btn;
+    border: 1px solid var(--secondary) ;
+    color: var(--secondary);
+
+    &:hover{
+        background-color: var(--secondary);
+        color: #fff;
+    }
+}
+
+.btn-sm{
+    font-size: .9em;
+    padding: .3em .6em!important;
+}
+
+.btn-large{
+    width: 100%;
+}

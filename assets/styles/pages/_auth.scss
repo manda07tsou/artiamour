@@ -1,0 +1,10 @@
+.auth-box{
+    @extend %box;
+}
+
+@media (min-width: 1000px){
+    .auth-box{
+        width: 40%;
+        margin: auto;
+    }
+}

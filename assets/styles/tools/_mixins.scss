@@ -1,0 +1,16 @@
+@mixin animateBurgerIcon($spanHeight:4px, $spanMargin:2px){
+    $translate: calc(#{$spanMargin} + #{$spanHeight});
+
+    &>*:first-child{
+        transform: translateY($translate) rotate(45deg);
+    }
+    
+    &>*:nth-child(2){
+        background-color: green!important;
+        opacity: 0;
+    }
+
+    &>*:last-child{
+        transform: translateY(calc($translate * -1)) rotate(-45deg);
+    }
+}

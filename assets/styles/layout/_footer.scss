@@ -1,0 +1,7 @@
+.footer{
+    @extend %container;
+    background-color: var(--border);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: var(--section-space);
+}

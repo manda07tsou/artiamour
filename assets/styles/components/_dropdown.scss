@@ -1,0 +1,124 @@
+%dropdown{
+    position: relative;
+    display: block;
+}
+
+//dropdown Hover CSS
+.dropdown{
+    @extend %dropdown;
+
+    .dropdown-toggle{
+        padding-bottom: 3px;
+    }
+
+    .dropdown-content{
+        min-width: 200px;
+        display: none;
+
+        li{
+            margin: 0;
+            margin-top: 20px;
+            padding-left: 10px;
+        }
+    }
+    
+    &:hover .dropdown-content{
+        display: block;
+        position: relative;
+    }
+
+    // comportement de dropdown pour les peripherique superieur a 640px
+    @media (min-width:640px){
+        .dropdown-content{
+            position: absolute!important;
+            background-color: var(--background-light);
+            border-radius: 3px;
+            box-shadow: 0 0 3px gray;
+            padding-top: 10px;
+            animation: hide .3s;
+
+            li{
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+
+//dropdown avec evenenemt javascript
+.js-dropdown{
+    @extend %dropdown;
+
+    .dropdown-toggle{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        min-width: 50%;
+    }
+    
+    .dropdown-toggle span{
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    .dropdown-closed{
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        font-size: 1.1em!important;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover{
+            color: var(--color-primary);
+        }
+    }
+    
+    .dropdown-content{
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        // left: 0;
+        background-color: var(--background-light);
+        border-radius: 5px;
+        border: 1px solid var(--border);
+        min-width: 250px;
+        padding: 10px 20px;
+        animation: hide .3s;
+        z-index: 1000;
+
+        li::first-letter{
+            text-transform: uppercase;
+        }
+
+        a{
+            display: flex;
+            align-items: center;
+            padding:5px;
+        }
+
+        a:hover{
+            background-color: var(--color)-second;
+            color: var(--second-inversed);
+        }
+    }
+    
+}
+
+//animation pour l'affichage de dropdown
+@keyframes hide {
+    from{
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+

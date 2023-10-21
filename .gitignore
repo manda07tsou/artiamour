@@ -9,6 +9,11 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
+###> javascript
+/node_modules/
+/public/dist/*.js
+/public/dist/*.css
+/public/dist/*.map
 ###> phpunit/phpunit ###
 /phpunit.xml
 .phpunit.result.cache

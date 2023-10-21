@@ -1,0 +1,21 @@
+%fields{
+    border: 1px solid var(--border);
+    width: 100%;
+    outline: none;
+    padding: space(1);
+    color: var(--form-color, inherit);
+    border-radius: 4px;
+
+    &:focus{
+        border-color: royalblue;
+    }
+}
+
+.form-input{
+    @extend %fields;
+}
+
+.form-textarea{
+    @extend %fields;
+}
+

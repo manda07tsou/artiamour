@@ -1,0 +1,38 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}admin | Home{% endblock %}
+
+{% block body %}
+    <div class="container mt-3">
+        <div class="section-title text-left">Liste des produits</div>
+        <a href="?mod=product&page=new" class="btn-secondary">Nouveau</a>
+        <table class="table mt-2">
+            <thead>
+                <th>ID</th>
+                <th>Nom produit</th>
+                <th>prix</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="?mod=product&page=show" class="link">1</a></td>
+                    <td><a href="?mod=product&page=show" class="link">Crop top</a></td>
+                    <td>20 000</td>
+                    <td class="table-action">
+                        <a href="?mod=product&page=edit" class="btn-tertiary btn-sm">Editer</a>
+                        <a href="#" class="btn-danger btn-sm">Supprimer</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="?mod=product&page=show" class="link">2</a></td>
+                    <td><a href="?mod=product&page=show" class="link">Crop top</a></td>
+                    <td>20 000</td>
+                    <td class="table-action">
+                        <a href="?mod=product&page=edit" class="btn-tertiary btn-sm">Editer</a>
+                        <a href="#" class="btn-danger btn-sm">Supprimer</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

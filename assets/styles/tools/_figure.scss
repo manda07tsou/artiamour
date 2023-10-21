@@ -1,0 +1,15 @@
+.burger{
+    border: 1px solid var(--secondary);
+    border-radius: 3px;
+    height: max-content;
+    cursor: pointer;
+    
+    span{
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color:var(--secondary);
+        margin: 6px;
+        transition: .3s;
+    }
+}

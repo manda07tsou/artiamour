@@ -1,0 +1,13 @@
+.about{
+    margin-top: space(3);
+}
+
+.about img{
+    display: none;
+}
+
+@media (min-width: 1000px){
+    .about-section img{
+        display: block;
+    }
+}

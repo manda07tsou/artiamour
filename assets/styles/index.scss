@@ -1,0 +1,22 @@
+@import "./tools/reset";
+@import "./tools/functions";
+@import "./tools/utils";
+@import "./tools/normalize";
+@import "./tools/mixins";
+@import "./tools/animation";
+@import "./tools/figure";
+
+@import "./layout/layout";
+@import "./layout/header";
+@import "./layout/footer";
+
+@import "./components/card";
+@import "./components/btn";
+@import "./components/scrollbar";
+@import "./components/form";
+
+@import "./pages/home";
+@import "./pages/products";
+@import "./pages/about";
+@import "./pages/contact";
+@import "./pages/auth";

@@ -1,0 +1,26 @@
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    line-height: 1.2em;
+    border: 1px solid var(--border);
+
+}
+
+.table thead th, .table tr{
+    padding: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+.table thead th{
+    padding: 16px 8px;
+}
+
+.table td, .table th{
+    padding: 8px;
+}
+
+.table thead th{
+    text-align: start;
+    font-weight: 700;
+}
+

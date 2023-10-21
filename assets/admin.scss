@@ -1,0 +1,27 @@
+@import "./styles/components/table";
+@import "./styles/components/dropdown";
+
+%container, .container{
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+.admin-header{
+    @extend %container;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--border);
+}
+
+@media (max-width: 400px){
+    .table-action *{
+        margin-bottom: 5px;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}

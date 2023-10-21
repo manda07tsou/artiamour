@@ -1,0 +1,33 @@
+:root{
+    --primary: #74471b;
+    --secondary: #ff5c62;
+    --color: rgb(99, 95, 95);
+    --container-padding: 20px;
+    --border: rgb(230, 221, 221);
+    --space: 8px;
+    --section-space: 40px;
+    --shadow: gainsboro;
+    --form-color: rgb(158, 154, 154);
+}
+
+
+@media (min-width: 720px){
+    :root{
+        --section-space: 90px;
+    }
+}
+
+@media (min-width: 1200px){
+    :root{
+        --section-space: 100px;
+    }
+}
+
+@import "./styles/index.scss";
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    line-height: 1.6em;
+    color: var(--color);
+}

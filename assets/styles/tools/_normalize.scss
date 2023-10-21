@@ -1,0 +1,54 @@
+h6, .h6{
+    font-size: 1.3em;
+    line-height: 1.4em;
+}
+
+h5, .h5{
+    font-size: 1.6em;
+    line-height: 1.4em;
+}
+
+h4, .h4{
+    font-size: 1.9em;
+    line-height: 1.4em;
+}
+
+h3, .h3{
+    font-size: 2.2em;
+    line-height: 1.4em;
+    // font-weight: bold;
+
+    @media (max-width: 720px){
+        font-size: 1.4em;
+    }
+}
+
+h2, .h2{
+    font-size: 2.5em;
+    line-height: 1.4em;
+
+    @media (max-width: 720px){
+        font-size: 1.7em;
+    }
+}
+
+h1, .h1{
+    font-size: 2.8em;
+    line-height: 1.4em;
+    font-weight: bold;
+
+    @media (max-width: 720px){
+        font-size: 2em;
+    }
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+p{
+    padding-top: .5em;
+    text-align: justify;
+}
+
