@@ -1,0 +1,32 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Details produit{% endblock %}
+
+{% block body %}
+<div class="container mt-3">
+    <div class="section-title text-left">Details produit</div>
+
+    <div class="product">
+        <div>
+            <img src="/images/products/{{ product.filename }}" alt="produit-{{ product.id }}" class="product-img">
+        </div>
+        <div class="product-description">
+            <h3 class="text-primary">{{ product.name }}</h3>
+            <h4 class="text-secondary">{{ product.price }} Ariary</h4>
+            <div class="line my-2"></div>
+            <h6 class="text-primary">Matières</h6>
+            <span>{{ product.matter }}</span>
+            <div class="line my-2"></div>
+            <h6 class="text-primary">Couleur disponible</h6>
+            <span>Toute couleur aux choix</span>
+            <div class="mt-2">
+                <a href="{{ path("admin_product_edit",{id: product.id}) }}" class="btn-tertiary btn-sm">Editer</a>
+                <form is="form-deletion" method="post" action="{{ path("admin_product_delete",{id: product.id}) }}">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete-product-'~product.id)}}" />
+                    <button class="btn-danger btn-sm">Supprimer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

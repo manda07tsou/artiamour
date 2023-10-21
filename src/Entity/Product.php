@@ -2,11 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ProductRepository;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
+ * @Vich\Uploadable()
  */
 class Product
 {
@@ -34,8 +39,19 @@ class Product
 
     /**
      * @ORM\Column(type="string", length=255)
+    */
+    private $filename;
+
+    /**
+     * @var File
+     * @Vich\UploadableField(mapping="product_image" , fileNameProperty="filename")
      */
     private $image;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updated_at;
 
     public function getId(): ?int
     {
@@ -78,14 +94,37 @@ class Product
         return $this;
     }
 
-    public function getImage(): ?string
-    {
+    public function setImage(File $image){
+        $this->image = $image;
+
+        if($this->image instanceof UploadedFile){
+            $this->setUpdated_at(new \DateTimeImmutable());
+        }
+    }
+
+    public function getImage(){
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function getUpdated_at()
     {
-        $this->image = $image;
+        return $this->updated_at;
+    }
+
+    public function setUpdated_at(?\DatetimeImmutable $updated_at):self
+    {
+        $this->updated_at = $updated_at;
+        return $this;
+    }
+
+    public function getFilename(): ?string
+    {
+        return $this->filename;
+    }
+
+    public function setFilename(?string $filename): self
+    {
+        $this->filename = $filename;
 
         return $this;
     }
