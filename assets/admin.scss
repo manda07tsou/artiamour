@@ -1,5 +1,7 @@
 @import "./styles/components/table";
 @import "./styles/components/dropdown";
+@import "./styles/components/alert";
+@import "./styles/components/pagination";
 
 %container, .container{
     padding-left: var(--container-padding);

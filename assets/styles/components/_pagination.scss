@@ -1,0 +1,20 @@
+.pagination{
+    display: inline-flex;
+    gap: 10px;
+    border: 1px solid var(--border);
+    padding: 8px;
+}
+
+.pagination li{
+    list-style: none;
+}
+.pagination li a, .pagination li span{
+    display: block;
+    border: 1px solid var(--border);
+    padding:0px 8px;
+}
+
+.pagination .current_page{
+    background-color: var(--primary)!important;
+    color: #fff;
+}

@@ -4,6 +4,7 @@
 
 {% block body %}
     <div class="container mt-3">
+        {% include "partials/_flash.html.twig" %}
         <div class="section-title text-left">Liste des produits</div>
         <a href="{{ path('admin_product_new') }}" class="btn-secondary">Nouveau</a>
         <table class="table mt-2">
@@ -30,5 +31,8 @@
                 {% endfor %}
             </tbody>
         </table>
+        <div class="mt-2">
+            {{ knp_pagination_render(products)}}
+        </div>
     </div>
 {% endblock %}

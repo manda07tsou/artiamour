@@ -6,21 +6,25 @@ use App\Entity\Product;
 use App\Form\ProductType;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use SebastianBergmann\Environment\Console;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ProductController extends AbstractController
 {
+    private $pr;
+    public function __construct(
+        ProductRepository $pr
+    )
+    {
+        $this->pr = $pr;
+    }
+
     /**
      * @Route("/admin/product/new", name="admin_product_new")
      */
-    public function index(
-        Request $request,
-        ProductRepository $pr
+    public function new(
+        Request $request
     )
     {
         $product = new Product();
@@ -28,7 +32,8 @@ class ProductController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $pr->add($product, 1);
+            $this->pr->add($product, 1);
+            $this->addFlash('success', 'Produit ajoutée avec succées');
             return $this->redirectToRoute('admin_home');
         }
 
@@ -41,10 +46,9 @@ class ProductController extends AbstractController
      * @Route("/admin/product/show/{id}", name="admin_product_show")
      */
     public function show(
-        $id,
-        ProductRepository $pr
+        $id
     ){
-        $product = $pr->findOneBy(['id' =>$id]);
+        $product = $this->pr->findOneBy(['id' =>$id]);
         return $this->render('admin/product/show.html.twig', [
             'product' => $product
         ]);
@@ -55,16 +59,16 @@ class ProductController extends AbstractController
      */
     public function edit(
         $id,
-        ProductRepository $pr,
         EntityManagerInterface $em,
         Request $request
     ){
-        $product = $pr->findOneBy(['id' => $id]);
+        $product = $this->pr->findOneBy(['id' => $id]);
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
             $em->flush();
+            $this->addFlash('success', 'Produit editer avec succées');
             return $this->redirectToRoute('admin_home');
         }
         
@@ -78,13 +82,13 @@ class ProductController extends AbstractController
      */
     public function delete(
         $id,
-        ProductRepository $pr,
         Request $request
     ){
         $token = $request->get('_token');
         if($this->isCsrfTokenValid('delete-product-'.$id, $token)){
-            $pr->remove($pr->findOneBy(['id' => $id]), true);
+            $this->pr->remove($this->pr->findOneBy(['id' => $id]), true);
         }
+        $this->addFlash('success', 'Produit supprimer avec succées');
         return $this->redirectToRoute('admin_home');
     }
 }

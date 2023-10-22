@@ -5,6 +5,7 @@
 /.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
+/public/images/products/*
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
@@ -14,6 +15,8 @@
 /public/dist/*.js
 /public/dist/*.css
 /public/dist/*.map
+###< javascript
+
 ###> phpunit/phpunit ###
 /phpunit.xml
 .phpunit.result.cache

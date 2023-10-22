@@ -1,0 +1,26 @@
+.alert{
+    padding: 16px;
+    color: #fff;
+    border-radius: 8px;
+    animation: slideTop .3s ease-in-out;
+}
+
+.alert-success{
+    background-color: rgb(75, 151, 116);
+}
+
+.alert-error{
+    background-color: rgb(204, 94, 94);
+}
+
+@keyframes slideTop {
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }    
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+}
