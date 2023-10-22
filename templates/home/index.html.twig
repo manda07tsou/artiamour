@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Artiamour{% endblock %}
+
+{% block body %}
+    <div class="banniere">
+        <div>
+            <div class="banniere-title hide-bottom delay-1">Artiamour,</div>
+            <div class="banniere-text hide-bottom delay-2">
+                L’endroit où l’artisanat est célébré </br>avec passion et amour.
+            </div>
+            <a href="?mod=product" class="btn-primary mt-2  hide-bottom delay-3">Découvrir nos produits</a>
+        </div>
+        <div class="banniere-img hide-right delay-4" style="transform: translateX(50px);">
+            <img src="images/illustration/about_illustration.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section text-center">
+            <div class="section-title hide-bottom">Nos produits</div>
+            <p class="mb-5 text-center hide-bottom">
+                Chez Artiamour, notre principale expertise réside dans la conception d'articles réalisés à la main, à l'aide de crochets.</br>
+                Permettez-nous de vous donner quelques exemples des articles que nous avons déjà réalisés pour nos clients :
+            </p>
+
+            <div class="products">
+                {% for product in products %}
+                    <div class="product-home hide-bottom">
+                        {% include "product/_card.html.twig" %}
+                    </div> 
+                {% endfor %}
+            </div>
+            <a href="?mod=product" class="btn-primary btn-sm mt-3">Afficher plus</a>
+        </div>
+        <div class="section">
+            <div class="section-title text-center hide-bottom">Qui sommes nous?</div>
+            <div class="home_about-section">
+                <div class="hide-left delay-1">
+                    <img src="images/illustration/crochet-8202792_1280.webp" alt="" class="about-illustration">
+                </div>
+                <div class="hide-right delay-2">
+                    <p>Notre start-up se distingue en tant que concepteur d'articles de qualité, confectionnés avec soin et expertise. Nous utilisons une gamme de matières premium telles que des pelotes acryliques, des pelotes de coton, de la chenille et du velours pour donner vie à nos créations.</p>
+                    <p>Nous accordons une attention particulière aux détails et à la qualité de chaque pièce que nous créons. Ainsi, nous mettons tout notre savoir-faire et notre passion dans la conception de chaque article. Notre objectif est de vous offrir des produits de qualité et faits main qui vous apportent joie, confort et style. </p>
+                    <a href="?mod=about" class="btn-outlined-primary btn-sm mt-2">En savoir plus sur nous</a>
+                </div>
+            </div>
+        </div>
+        <div class="section hide-bottom">
+            <div class="section-title">Nous contacter</div>
+            <p class="text-center mb-5">
+            Pour intéragir avec nous, il vous suffit de nous contacter via le contact indiqués ci-dessous:
+            </p>
+            <div class="contact-box">
+                <div class="contact hide-bottom delay-1">
+                    <i class="far fa-envelope"></i>
+                    <div>
+                        <h6>Mail</h6>
+                        <span>artiamourhw@gmail.com</span>
+                    </div>
+                </div>
+                <div class="contact hide-bottom delay-2">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h6>Téléphone</h6>
+                        <span>+261 38 33 612 57</span>
+                    </div>
+                </div>
+                <div class="contact hide-bottom delay-3">
+                    <i class="fab fa-facebook-f"></i>
+                    <div>
+                        <h6>Facebook</h6>
+                        <span>Artiamour</span>
+                    </div>
+                </div>
+                <div class="contact hide-bottom delay-4">
+                    <i class="fab fa-instagram"></i>
+                    <div>
+                        <h6>Instagram</h6>
+                        <span>Arti_amour</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

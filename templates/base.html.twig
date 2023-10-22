@@ -6,15 +6,38 @@
         {# <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>"> #}
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset("dist/app.css") }}">
             {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
     <body>
+        <header class="header">
+            <a href="{{ path("app_home") }}" class="logo">
+                <img src="images/logo1.jpg" alt="logo">
+            </a>
+
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="nav">
+                <a href="?mod=home" class="nav-item active">Home</a>
+                <a href="?mod=product" class="nav-item">Produits</a>
+                <a href="?mod=about" class="nav-item">A propos</a>
+                <a href="?mod=contact" class="nav-item">Contact</a>
+            </nav>
+        </header>
+
         {% block body %}
+        {% endblock %}
+
+        <footer class="footer text-center">
+            Designé et dévéloppée par RAHAJANIRINA Vonintsoa
+        </footer>
+        {% block javascripts %}
+            <script src="{{ asset("dist/app.js")}}"></script>
         {% endblock %}
     </body>
 </html>
