@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProductController!{% endblock %}
+
+{% block body %}
+    <div class="container mt-5 text-center">
+        <div class="section-title text-left">Nos produits</div>
+        <p>Permettez-nous de vous donner quelques exemples des articles que nous avons déjà réalisés pour nos clients :</p>
+        <div class="l-product-page">
+            <div style="width:100%">
+                <div class="products">
+                    {% for product in products %}
+                        {% include "product/_card.html.twig" %}
+                    {% endfor %}
+                </div>
+                <div class="mt-2">
+                    {{ knp_pagination_render(products) }}
+                </div>
+            </div>
+            <div>
+                <div class="product-sidebar">
+                    <p>
+                        En plus de notre gamme variée d'articles, nous proposons également un service de commandes spéciales sur mesure. Nous comprenons que chaque client a des besoins uniques et des idées spécifiques en tête. C'est pourquoi nous vous encourageons vivement à nous envoyer votre demande personnalisée, et nous serons ravis de vous fournir un devis dans les plus brefs délais.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
