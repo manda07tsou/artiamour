@@ -41,3 +41,13 @@
 .product-home:nth-child(4),.product-home:nth-child(8),.product-home:nth-child(12){
     transition-delay: .3s!important;
 }
+
+@keyframes hide_animation {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: initial;
+    }
+}

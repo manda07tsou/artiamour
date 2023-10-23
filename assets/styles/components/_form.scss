@@ -21,4 +21,17 @@ form{
 .form-textarea{
     @extend %fields;
 }
+%error{
+    color: var(--secondary);
+    line-height: 1.6em;
+    animation: hide_animation .3s ease-in-out;
+}
+.form-error{
+    @extend %error;
+    background-color: var(--border);
+    padding: space();
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
 

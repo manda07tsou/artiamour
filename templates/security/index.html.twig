@@ -1,24 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SecurityController!{% endblock %}
+{% block title %}Authentification{% endblock %}
 
 {% block body %}
     <div class="container mt-5">
+        
         <div class="auth-box">
             <div class="section-title">CONNEXION</div>
-            <form action="?mod=admin">
+            {% if error %}
+                <div class="form-error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+            <form action="{{ path("app_auth") }}" method="post">
                 <div class="mb-2">
                     <label for="identifiant">Identifiant</label>
-                    <input type="email" id="identifiant" class="form-input">
+                    <input type="email" id="identifiant" value="{{ last_username }}" name="_username" class="form-input">
                 </div>
                 <div class="mb-2">
                     <label for="password">Mot de passe</label>
-                    <input type="password" id="password" class="form-input">
+                    <input type="password" id="password" name="_password" class="form-input">
                 </div>
                 <div class="mb-2">
-                    <input type="checkbox" id="remember_me">
-                    <label for="remember_me">Se souvenir de moi</label>
+                    <input type="checkbox" id="_remember_me" name="_remember_me">
+                    <label for="_remember_me">Se souvenir de moi</label>
                 </div>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate')}}" />
                 <button class="btn-primary btn-large">Se connecter</button>
             </form>
         </div>
