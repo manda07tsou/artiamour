@@ -96,6 +96,10 @@
     border-radius: 50%;
 }
 
+.capitalize::first-letter{
+    text-transform: capitalize;
+}
+
 
 
 

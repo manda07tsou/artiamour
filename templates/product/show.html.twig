@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Details produit{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="section-title text-left">Details produit</div>
+
+    <div class="product-layout mt-2">
+        <div class="product">
+            <div>
+                <img src="/images/products/{{ product.filename }}" alt="produit-{{ product.id }}" class="product-img">
+            </div>
+            <div class="product-description">
+                <h3 class="text-primary capitalize">{{ product.name }}</h3>
+                <h4 class="text-secondary">{{ product.price }} Ariary</h4>
+                <div class="line my-2"></div>
+                <h6 class="text-primary">Matières</h6>
+                <span>{{ product.matter }}</span>
+                <div class="line my-2"></div>
+                <h6 class="text-primary">Couleur disponible</h6>
+                <span>Toute couleur aux choix</span>
+            </div>
+        </div>
+        <div class="box">
+            <p>
+                N'hésitez pas à nous contacter dès maintenant pour vos commandes spéciales et laissez-nous transformer votre idée en réalité.
+            </p>
+            <p>
+                <a href="#" class="icon-roundend link"><i class="far fa-envelope"></i></a>
+                <a href="#" class="icon-roundend link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="icon-roundend link"><i class="fab fa-instagram"></i></a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
