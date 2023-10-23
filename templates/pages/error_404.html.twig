@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PageController!{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="container">
+        <h1>Page non trouvée :(</h1>
+        <p>
+            <h6>{{ message }}</h6>
+        </p>
+        <div class="btn btn-primary mt-2">
+            <a href="{{ path("app_home")}}" >Revenir à la page d'acceuil</a>
+        </div>
+        </div>
+    </div>
+{% endblock %}

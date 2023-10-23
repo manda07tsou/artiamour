@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\ProductRepository;
+use App\Services\ExceptionService;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -38,9 +39,17 @@ class ProductController extends AbstractController
      * @Route("/product/show/{id}", name="app_product_show")
      */
     public function show(
-        $id
+        $id,
+        ExceptionService $exceptionService
     ){
-        $product = $this->pr->findOneBy(['id' => $id]);
+        $product = $this->pr->find($id);
+
+        if(!$product){
+            return $exceptionService->error404(
+                "Le produit numero #".$id." n'existe pas"
+            );
+        }
+        
         return $this->render('product/show.html.twig', [
             'product' => $product
         ]);

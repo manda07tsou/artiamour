@@ -48,7 +48,7 @@ class ProductController extends AbstractController
     public function show(
         $id
     ){
-        $product = $this->pr->findOneBy(['id' =>$id]);
+        $product = $this->pr->find($id);
         return $this->render('admin/product/show.html.twig', [
             'product' => $product
         ]);
@@ -62,7 +62,7 @@ class ProductController extends AbstractController
         EntityManagerInterface $em,
         Request $request
     ){
-        $product = $this->pr->findOneBy(['id' => $id]);
+        $product = $this->pr->find($id);
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
 
@@ -86,7 +86,7 @@ class ProductController extends AbstractController
     ){
         $token = $request->get('_token');
         if($this->isCsrfTokenValid('delete-product-'.$id, $token)){
-            $this->pr->remove($this->pr->findOneBy(['id' => $id]), true);
+            $this->pr->remove($this->pr->find($id), true);
         }
         $this->addFlash('success', 'Produit supprimer avec succées');
         return $this->redirectToRoute('admin_home');
