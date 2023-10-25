@@ -16,7 +16,7 @@ class HomeController extends AbstractController
         ProductRepository $pr
     ): Response
     {
-        $products = $pr->findAllProduct();
+        $products = $pr->findByLimit(4);
         return $this->render('home/index.html.twig',[
             'products' => $products
         ]);
