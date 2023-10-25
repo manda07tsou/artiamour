@@ -5,4 +5,3 @@ if(burger){
         document.querySelector('header').classList.toggle('is-open');
     })
 }
-

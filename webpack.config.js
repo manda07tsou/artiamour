@@ -1,7 +1,9 @@
 const path = require('path')
 
-module.exports = {
-    mode: 'development',
+//importation plugins
+const MiniCssExtactPlugin = require('mini-css-extract-plugin')
+
+var config = {
     entry: {
         app: './assets/app.js',
         admin: './assets/admin.js'
@@ -9,5 +11,28 @@ module.exports = {
     output: {
         filename:'[name].js',
         path: path.resolve(__dirname, 'public/dist')
+    },
+    module: {
+        rules: [
+            {
+                test: /\.scss$/,
+                use: [
+                    MiniCssExtactPlugin.loader,
+                    {loader: 'css-loader'},
+                    {loader: 'sass-loader'}
+                ]
+            }
+        ]
+    },
+    plugins: [new MiniCssExtactPlugin()]
+}
+
+
+module.exports = (env, argv) => {
+    let dev = argv.mode === "development" ? true : false
+    if(dev){
+        config.devtool = 'source-map'
     }
+
+    return config;
 }

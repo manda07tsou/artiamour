@@ -20,6 +20,7 @@ security:
                 enable_csrf: true
                 login_path: app_auth
                 check_path: app_auth
+                default_target_path: admin_home
             logout:
                 path: app_logout
             remember_me:
@@ -27,6 +28,8 @@ security:
                 lifetime: 2419200 #1 mois en seconde
                 path: /
                 samesite: strict
+                
+            
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall

@@ -1,3 +1,5 @@
+import "./admin.scss";
+
 import { Dropdown } from "./javascript/components/dropdown.js";
 import { FormDeletion} from "./javascript/components/formDeletion.js";
 
