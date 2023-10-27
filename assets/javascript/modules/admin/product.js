@@ -1,4 +1,4 @@
-import {addEvent, $} from "../services/dom.js"
+import {addEvent, $} from "../../services/dom.js"
 
 //evenement pour le checkbox sur le formulaire de produit
 addEvent(
