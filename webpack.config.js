@@ -21,6 +21,11 @@ var config = {
                     {loader: 'css-loader'},
                     {loader: 'sass-loader'}
                 ]
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ["babel-loader"]
             }
         ]
     },
@@ -31,6 +36,7 @@ var config = {
 module.exports = (env, argv) => {
     let dev = argv.mode === "development" ? true : false
     if(dev){
+        config.watch = true
         config.devtool = 'source-map'
     }
 

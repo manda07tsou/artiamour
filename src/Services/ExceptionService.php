@@ -12,7 +12,7 @@ class ExceptionService{
         $this->twig = $twig;
     }
 
-    public function error404(string $message = "la page que vous chercher n'existe pas"){
+    public function error404(string $message = "la page n'existe pas"){
         $content = $this->twig->render("pages/error_404.html.twig", 
             ["message" => $message]
         );
