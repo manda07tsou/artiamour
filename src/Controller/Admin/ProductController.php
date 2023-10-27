@@ -36,9 +36,9 @@ class ProductController extends AbstractController
             $this->addFlash('success', 'Produit ajoutée avec succées');
             return $this->redirectToRoute('admin_home');
         }
-
+        
         return $this->render('admin/product/new.html.twig',[
-            'form' => $form->createView()
+            'form' => $form->createView(),
         ]);
     }
 
@@ -73,8 +73,7 @@ class ProductController extends AbstractController
         }
         
         return $this->render('admin/product/edit.html.twig',[
-            'form' => $form->createView(),
-            'product_image' => $product->getFilename()
+            'form' => $form->createView()
         ]);
     }
 

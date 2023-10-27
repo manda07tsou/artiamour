@@ -33,6 +33,13 @@ class ProductType extends AbstractType
                     'class' => 'form-textarea'
                 ]
             ])
+            ->add('colors', TextareaType::class, [
+                'required' => false,
+                'label' => 'Couleurs',
+                'attr' => [
+                    'class' => 'form-textarea'
+                ]
+            ])
             ->add('image', FileType::class, [
                 'required' => false,
                 'attr' => [

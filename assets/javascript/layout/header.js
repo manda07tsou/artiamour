@@ -1,7 +1,9 @@
-let burger = document.querySelector('.burger');
+import {addEvent, $} from "../services/dom.js"
 
-if(burger){
-    document.querySelector(".burger").addEventListener('click', (e) => {
-        document.querySelector('header').classList.toggle('is-open');
-    })
-}
+addEvent(
+    $(".burger"),
+    "click",
+    () => {
+        document.querySelector('header').classList.toggle('is-open')
+    }
+)

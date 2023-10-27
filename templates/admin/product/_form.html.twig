@@ -9,6 +9,19 @@
         {{ form_row(form.matter)}}
     </div> 
     <div class="mt-2">
+        {{ form_row(form.colors)}}
+    </div> 
+    <div class="mt-2">
+        <input type="checkbox" 
+            {% if form.vars.value.colors == "Toutes couleurs disponible" %}
+                {{ 'checked' }}
+            {% endif %}
+            name="colors_all" id="colors_all"
+        />
+        <label>Toutes couleurs</div>
+    </div>
+
+    <div class="mt-2">
         {{ form_row(form.image)}}
     </div>  
     <button class="btn-secondary mt-2">Enregistrer</button> 

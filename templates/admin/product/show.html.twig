@@ -18,7 +18,7 @@
             <span>{{ product.matter }}</span>
             <div class="line my-2"></div>
             <h6 class="text-primary">Couleur disponible</h6>
-            <span>Toute couleur aux choix</span>
+            <span>{{ product.colors }}</span>
             <div class="mt-2">
                 <a href="{{ path("admin_product_edit",{id: product.id}) }}" class="btn-tertiary btn-sm">Editer</a>
                 <form is="form-deletion" method="post" action="{{ path("admin_product_delete",{id: product.id}) }}">

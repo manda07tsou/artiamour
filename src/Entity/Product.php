@@ -53,6 +53,11 @@ class Product
      */
     private $updated_at;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $colors;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -125,6 +130,18 @@ class Product
     public function setFilename(?string $filename): self
     {
         $this->filename = $filename;
+
+        return $this;
+    }
+
+    public function getColors(): ?string
+    {
+        return $this->colors;
+    }
+
+    public function setColors(string $colors): self
+    {
+        $this->colors = $colors;
 
         return $this;
     }
