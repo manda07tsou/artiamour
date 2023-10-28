@@ -17,6 +17,33 @@
     border: 1px solid var(--border);
 }
 
+.admin_nav{
+    @extend %container;
+    display: flex;
+}
+.admin_nav-item{
+    list-style: none;
+    border: 1px solid var(--border);
+    border-right: none;
+    border-top: none;
+
+    &:last-child{
+        border-right: 1px solid var(--border);
+    }
+}
+
+.admin_nav-item a{
+    padding: 8px;
+    transition: .3s;
+
+    &:hover{
+        background-color: var(--secondary);
+        color: #fff;
+    }
+}
+
+
+
 @media (max-width: 400px){
     .table-action *{
         margin-bottom: 5px;

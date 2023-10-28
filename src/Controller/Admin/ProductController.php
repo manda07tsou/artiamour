@@ -22,7 +22,7 @@ class ProductController extends AbstractController
 
     /**
      * @Route("/admin/product/new", name="admin_product_new")
-     */
+    */
     public function new(
         Request $request
     )

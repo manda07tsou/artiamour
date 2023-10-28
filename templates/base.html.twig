@@ -27,6 +27,9 @@
                 <a href="{{ path("app_product")}}" class="nav-item  {% if('_product' in route) %}active{% endif %}">Produits</a>
                 <a href="{{ path("app_about")}}" class="nav-item  {% if('_about' in route) %}active{% endif %}">A propos</a>
                 <a href="{{ path("app_contact")}}" class="nav-item  {% if('_contact' in route) %}active{% endif %}">Contact</a>
+                {% if app.user %}
+                    <a href="{{ path('admin_home')}}" class="btn btn-primary btn-sm">Administration</a>
+                {% endif %}
             </nav>
         </header>
 
