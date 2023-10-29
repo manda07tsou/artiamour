@@ -2,3 +2,19 @@
 liip_imagine:
     # valid drivers options include "gd" or "gmagick" or "imagick"
     driver: "gd"
+    resolvers:
+        default:
+            web_path: ~
+    filter_sets:
+        cache: ~
+        medium:
+            quality: 75
+            filters:
+                thumbnail:
+                    size: [350,350]
+                    mode: outbound
+        large:
+            quality: 75
+            filters:
+                thumbnail:
+                    size: [500, 500]

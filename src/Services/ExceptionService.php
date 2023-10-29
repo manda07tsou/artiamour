@@ -1,8 +1,8 @@
 <?php
 namespace App\Services;
 
-use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
+use Symfony\Component\HttpFoundation\Response;
 
 class ExceptionService{
     private $twig;

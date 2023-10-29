@@ -9,18 +9,19 @@
         {{ form_row(form.matter)}}
     </div> 
     <div class="mt-2">
-        {{ form_row(form.colors)}}
+        {{ form_label(form.colors)}}
+        <div class="mb-2">
+            <input type="checkbox" 
+                {% if form.vars.value.colors == "Toutes couleurs disponible" %}
+                    {{ 'checked' }}
+                {% endif %}
+                name="colors_all" id="colors_all"
+            />
+            <label>Toutes couleurs</label>
+        </div>
+        {{ form_widget(form.colors)}}
     </div> 
-    <div class="mt-2">
-        <input type="checkbox" 
-            {% if form.vars.value.colors == "Toutes couleurs disponible" %}
-                {{ 'checked' }}
-            {% endif %}
-            name="colors_all" id="colors_all"
-        />
-        <label>Toutes couleurs</div>
-    </div>
-
+    
     <div class="mt-2">
         {{ form_row(form.image)}}
     </div>  

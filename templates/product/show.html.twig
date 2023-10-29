@@ -8,8 +8,9 @@
 
     <div class="product-layout mt-2">
         <div class="product">
-            <div>
-                <img src="/images/products/{{ product.filename }}" alt="produit-{{ product.id }}" class="product-img">
+            <div class="relative">
+                <a href="{{vich_uploader_asset(product)}}" class="card-link" target="_blank"></a>
+                <img src="{{ vich_uploader_asset(product) | imagine_filter('large') }}" alt="produit-{{ product.id }}" class="product-img">
             </div>
             <div class="product-description">
                 <h3 class="text-primary capitalize">{{ product.name }}</h3>
