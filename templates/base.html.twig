@@ -36,8 +36,37 @@
         {% block body %}
         {% endblock %}
 
-        <footer class="footer text-center">
-            Designé et dévéloppée par RAHAJANIRINA Vonintsoa
+        <footer class="footer">
+            <div class="footer-service">
+                <h5 class="text-primary">Services</h5>
+                Nous proposons un service de commandes spéciales sur mesure. Nous comprenons que chaque client a des besoins uniques et des idées spécifiques en tête. C'est pourquoi nous vous encourageons vivement à nous envoyer votre demande personnalisée, et nous serons ravis de vous fournir un devis dans les plus brefs délais.
+            </div>
+            <div class="footer-link">
+                <h5 class="text-primary">Lien</h5>
+                <ul>
+                    <li><a href="{{ path("app_home") }}" class="link">Home</a></li>
+                    <li><a href="{{ path("app_product") }}" class="link">Produit</a></li>
+                    <li><a href="{{ path("app_about") }}" class="link">A propos de nous</a></li>
+                    <li><a href="{{ path("app_contact") }}" class="link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5 class="text-primary">Nous contacter</h5>
+                <ul>
+                    <li>
+                        <a href="mailto:artiamourhw@gmail.com" class="link"><i class="far fa-envelope"></i>artiamourhw@gmail.com</a>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-phone"></i> +261 38 33 612 57</span>
+                    </li>
+                    <li>
+                        <a href="#lien-facebook" class="link"><i class="fab fa-facebook-f"></i> Artiamour</a>
+                    </li>
+                    <li>
+                        <a href="#lien-instagram" class="link"><i class="fab fa-instagram"></i> Arti_amour</a>
+                    </li>
+                </ul>
+            </div>
         </footer>
         {% block javascripts %}
             <script src="{{ asset("dist/app.js")}}"></script>

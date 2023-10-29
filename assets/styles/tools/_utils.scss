@@ -79,12 +79,14 @@
 }
 
 .link{
+    cursor: pointer;
     transition: filter .3s;
 }
 
 .link:hover{
-    filter: brightness(1.5);
+    filter: brightness(.7);
 }
+
 .icon-roundend{
     display: inline-flex;
     align-items: center;

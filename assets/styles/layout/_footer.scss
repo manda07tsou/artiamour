@@ -1,7 +1,32 @@
 .footer{
     @extend %container;
-    background-color: var(--border);
-    padding-top: 50px;
-    padding-bottom: 50px;
+    // background-color: var(--border);
+    background-color: gainsboro;
     margin-top: var(--section-space);
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.footer-service{
+    display: none;
+}
+
+.footer ul{
+    list-style: none;
+}
+
+@media (min-width: 900px){
+    .footer{
+        flex-direction: row;
+        column-gap: 40px;
+        padding-top: space(3);
+        padding-bottom: space(3);
+    }
+
+    .footer-service{
+        display: block;
+        width: 65%;
+
+    }
 }
