@@ -19,7 +19,7 @@
                     <tr>
                         <td><a href="{{ path("admin_product_show",{id: product.id}) }}" class="link">{{ product.id }}</a></td>
                         <td><a href="{{ path("admin_product_show",{id: product.id}) }}" class="link">{{ product.name }}</a></td>
-                        <td>{{ product.price }}</td>
+                        <td>{{ product.getFormatedPrice }}</td>
                         <td class="table-action">
                             <a href="{{ path("admin_product_edit",{id: product.id}) }}" class="btn-tertiary btn-sm">Editer</a>
                             <form is="form-deletion" method="post" action="{{ path("admin_product_delete",{id: product.id}) }}">

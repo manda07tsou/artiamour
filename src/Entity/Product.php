@@ -6,7 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProductRepository;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 
 
 /**
@@ -44,6 +46,7 @@ class Product
 
     /**
      * @var File
+     * @Assert\NotNull(message="Veuillez inserer une image")
      * @Vich\UploadableField(mapping="product_image" , fileNameProperty="filename")
      */
     private $image;
@@ -80,10 +83,14 @@ class Product
         return $this->price;
     }
 
+    public function getFormatedPrice(): ?string
+    {
+        return number_format(floatval($this->price), 0, '.','.');
+    }
+
     public function setPrice(string $price): self
     {
-        $this->price = $price;
-
+        $this->price = str_replace(' ', '', $price);
         return $this;
     }
 

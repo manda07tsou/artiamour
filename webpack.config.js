@@ -19,6 +19,18 @@ var config = {
                 use: [
                     MiniCssExtactPlugin.loader,
                     {loader: 'css-loader'},
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    ['autoprefixer', {
+                                        browsers: 'last 2 versions, ie > 8'
+                                    }]
+                                ]
+                            }
+                        }
+                    },
                     {loader: 'sass-loader'}
                 ]
             },
