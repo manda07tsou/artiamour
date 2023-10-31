@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProductRepository;
+use Cocur\Slugify\Slugify;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -46,7 +47,6 @@ class Product
 
     /**
      * @var File
-     * @Assert\NotNull(message="Veuillez inserer une image")
      * @Vich\UploadableField(mapping="product_image" , fileNameProperty="filename")
      */
     private $image;
@@ -74,7 +74,6 @@ class Product
     public function setName(string $name): self
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -151,5 +150,11 @@ class Product
         $this->colors = $colors;
 
         return $this;
+    }
+
+    public function getSlug():string
+    {
+        $slugify = new Slugify();
+        return $slugify->slugify($this->name);
     }
 }

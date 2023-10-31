@@ -36,10 +36,11 @@ class ProductController extends AbstractController
     }
 
     /**
-     * @Route("/product/show/{id}", name="app_product_show")
+     * @Route("/product/show/{slug<[a-z0-9\-]+>}-{id}", name="app_product_show")
      */
     public function show(
         $id,
+        $slug,
         ExceptionService $exceptionService
     ){
         $product = $this->pr->find($id);
@@ -48,6 +49,10 @@ class ProductController extends AbstractController
             return $exceptionService->error404(
                 "Le produit numero #".$id." n'existe pas"
             );
+        }
+
+        if($product->getSlug() !== $slug){
+            return $this->redirectToRoute('app_product_show', ['id' => $id, 'slug' => $slug]);
         }
         
         return $this->render('product/show.html.twig', [

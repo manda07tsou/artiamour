@@ -1,5 +1,5 @@
 <article class="card">
-    <a href="{{ path("app_product_show", {id: product.id} )}}" class="card-link" title="cliquer pour voir le detail"></a>
+    <a href="{{ path("app_product_show", {id: product.id , slug: product.slug} )}}" class="card-link" title="cliquer pour voir le detail"></a>
     <div class="card-body">
         <div class="card-title capitalize">{{ product.name }}</div>
     </div>

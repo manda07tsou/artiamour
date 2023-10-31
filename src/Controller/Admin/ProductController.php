@@ -27,18 +27,24 @@ class ProductController extends AbstractController
         Request $request
     )
     {
+        $errors = [];
         $product = new Product();
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $this->pr->add($product, 1);
-            $this->addFlash('success', 'Produit ajoutée avec succées');
-            return $this->redirectToRoute('admin_home');
+            if(null === $product->getImage()){
+                $errors = ['Veuillez insérer une image'];
+            }else{
+                $this->pr->add($product, 1);
+                $this->addFlash('success', 'Produit ajoutée avec succées');
+                return $this->redirectToRoute('admin_home');
+            }
         }
         
         return $this->render('admin/product/new.html.twig',[
             'form' => $form->createView(),
+            'errors' => $errors
         ]);
     }
 
