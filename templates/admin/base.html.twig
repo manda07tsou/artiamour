@@ -33,7 +33,7 @@
         <ul class="admin_nav">
             <li class="admin_nav-item {% if ('_product_' in route) or ("_home" in route) %}active{%endif%}"><a href="{{ path('admin_home') }}">Produits</a></li>
             <li class="admin_nav-item  {% if ('_account_' in route) %}active{%endif%} "><a href="#">Compte</a></li>
-            <li class="admin_nav-item"><a href="{{ path('app_home') }}">Espace client</a></li>
+            <li class="admin_nav-item"><a href="{{ path('app_home') }}" target="_blank">Espace client</a></li>
         </ul>
 
         {% block body %}
