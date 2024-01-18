@@ -7,9 +7,9 @@
     box-shadow: 0 0 8px var(--shadow);
     transition: border .3s;
 
-    &:hover{
-        border-color: var(--secondary);
-    }
+    // &:hover{
+    //     border-color: var(--secondary);
+    // }
 }
 
 .card-link{
@@ -26,6 +26,10 @@
 
 .card-body{
     padding-bottom: space();
+}
+
+.card-action{
+    width: 100%!important;
 }
 
 .card-title{

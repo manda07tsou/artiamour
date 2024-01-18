@@ -1,9 +1,12 @@
 <article class="card">
-    <a href="{{ path("app_product_show", {id: product.id , slug: product.slug} )}}" class="card-link" title="cliquer pour voir le detail"></a>
+    <!-- <a href="{{ path("app_product_show", {id: product.id , slug: product.slug} )}}" class="card-link" title="cliquer pour voir le detail"></a> -->
+    <div class="card-illustration">
+        <img src="{{ asset('images/products/'~ product.filename) | imagine_filter('medium') }}" class="card-img" alt="{{ product.name ~ "-" ~ product.id }}">
+    </div>
     <div class="card-body">
         <div class="card-title capitalize">{{ product.name }}</div>
     </div>
-    <div class="card-illustration">
-        <img src="{{ asset('images/products/'~ product.filename) | imagine_filter('medium') }}" class="card-img" alt="{{ product.name ~ "-" ~ product.id }}">
+    <div class="card-footer">
+        <a href="{{ path("app_product_show", {id: product.id , slug: product.slug} )}}" class="btn btn-sm btn-outlined-primary card-action">Voir plus de details</a>
     </div>
 </article>
