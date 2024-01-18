@@ -35,10 +35,6 @@
         {% endblock %}
 
         <footer class="footer">
-            <div class="footer-service">
-                <h5 class="text-primary">Services</h5>
-                Nous proposons un service de commandes spéciales sur mesure. Nous comprenons que chaque client a des besoins uniques et des idées spécifiques en tête. C'est pourquoi nous vous encourageons vivement à nous envoyer votre demande personnalisée, et nous serons ravis de vous fournir un devis dans les plus brefs délais.
-            </div>
             <div class="footer-link">
                 <h5 class="text-primary">Lien</h5>
                 <ul>
@@ -64,6 +60,12 @@
                         <a href="#lien-instagram" class="link"><i class="fab fa-instagram"></i> Arti_amour</a>
                     </li>
                 </ul>
+            </div>
+            <div class="footer-service">
+                <h5 class="text-primary">Conditions générales de vente</h5>
+                <span class="text-inline">Merci de bien lire nos conditions de vente avant d’effectuer votre achat (
+                    <a href="{{ path('app_cgv')}}" class="link-underlined"> Lire les conditions générales de vente</a>)
+                </span>
             </div>
         </footer>
         {% block javascripts %}

@@ -87,6 +87,18 @@
     filter: brightness(.7);
 }
 
+.link-underlined{
+    text-decoration: underline;
+    color: rgb(39, 158, 167);
+
+    &:hover{
+        filter:contrast(1.5);
+    }
+}
+
+.text-inline>*{
+    display: inline!important;
+}
 .icon-roundend{
     display: inline-flex;
     align-items: center;
